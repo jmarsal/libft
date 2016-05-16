@@ -6,13 +6,14 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#*   Updated: 2016/05/02 11:25:21 by jmarsal          ###   ########.fr       *#
+#*   Updated: 2016/05/16 22:01:35 by jmarsal          ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+INC_PATH = -I./includes/
 SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
 	ft_strcmp.c ft_strstr.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strcpy.c \
 	ft_strncpy.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isalnum.c \
@@ -25,9 +26,9 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
 	ft_putendl.c ft_putendl_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
 	ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_itoa_base.c ft_print_memory.c \
 	ft_isupper.c ft_islower.c ft_isspace.c ft_strnlen.c ft_strtoupper.c \
-	ft_strtolower.c ft_abs.c ft_min.c ft_max.c ft_strrev.c
-
-OBJ = $(SRC:%.c=%.o)
+	ft_strtolower.c ft_abs.c ft_min.c ft_max.c
+OBJ_PATH = ./obj
+OBJ = $(SRC:%.c=$(OBJ_PATH)/%.o)
 
 all: $(NAME)
 
@@ -35,13 +36,14 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-%.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+$(OBJ_PATH)/%.o: %.c
+	@mkdir -p $(OBJ_PATH)
+	@$(CC) -o $@ -c $< $(CFLAGS) $(INC_PATH)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

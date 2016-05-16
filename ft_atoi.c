@@ -6,16 +6,9 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/01 23:17:49 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/16 21:39:29 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/01/12 18:23:30 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** converts the string argument str to an integer (type int).
-** *str -- This is the string representation of an integral number.
-** This function returns the converted integral number as an int value.
-** If no valid conversion could be performed, it returns zero.
-*/
 
 int	ft_atoi(const char *str)
 {

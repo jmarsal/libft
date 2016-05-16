@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 10:17:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/05 15:16:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/05/08 16:13:47 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 **	subsequently be used as an argument to the function free(3).
 **	If insufficient memory is available, NULL is returned and errno is set
 **	to ENOMEM.
-**	The strndup() function copies at most n characters from the string s1
-**	always NUL terminating the copied string.
 */
 
 char	*ft_strdup(const char *s1)
