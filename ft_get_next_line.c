@@ -46,6 +46,7 @@ int			read_file(int fd, t_gnl *list)
 	char	*swap;
 
 	swap = NULL;
+	ret = 1;
 	while (!ft_strchr(list->line, EOL))
 	{
 		if ((ret = read(fd, buffer, GNL_BUFF_SIZE)) < 0)
