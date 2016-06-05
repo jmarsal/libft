@@ -5,77 +5,56 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/17 00:34:02 by jmarsal           #+#    #+#              #
-#    Updated: 2016/06/04 15:32:06 by jmarsal          ###   ########.fr        #
+#    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
+#    Updated: 2016/05/31 13:51:45 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fdf
+NAME = libft.a
 CC = gcc
-CFLAGS = -O2 -Wall -Werror -Wextra
-CFLAGS_DEBUG = -g -O0 -fsanitize=address -pedantic -Wall -Werror -Wextra
-SRC_DIR = ./srcs/
-SRC_FILES = main.c init.c event.c draw.c perror.c get_data.c list.c
+OPTI_FLAGS = -O2
+CFLAGS = $(OPTI_FLAGS) -Wall -Wextra -Werror
+INC_PATH = -I./includes/
+SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
+	ft_strcmp.c ft_strstr.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strcpy.c \
+	ft_strncpy.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isalnum.c \
+	ft_isprint.c ft_toupper.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_bzero.c\
+	ft_memmove.c ft_memchr.c ft_memcmp.c ft_strdup.c ft_strchr.c ft_strrchr.c \
+	ft_strnstr.c ft_toupper.c ft_tolower.c ft_memalloc.c ft_memdel.c \
+	ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c \
+	ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c\
+	ft_strsplit.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c \
+	ft_putendl.c ft_putendl_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
+	ft_lstadd.c ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_itoa_base.c \
+	ft_print_memory.c ft_isupper.c ft_islower.c ft_isspace.c ft_strnlen.c \
+	ft_strtoupper.c ft_strtolower.c ft_abs.c ft_min.c ft_max.c ft_strrev.c \
+	ft_get_next_line.c
 OBJ_PATH = ./obj
-OBJ_FILES = $(SRC_FILES:%.c=$(OBJ_PATH)/%.o)
-INC_PATH = -I./libft/ -I./libmlx/ -I./includes/
-LIB_PATH = -L./libmlx/ -lmlx -L./libft/ -lft -framework OpenGL -framework AppKit
+OBJ = $(SRC:%.c=$(OBJ_PATH)/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	@make -C libft
-	@make -C libmlx
-	@$(CC) -o $(NAME) $(OBJ_FILES) $(CFLAGS) $(INC_PATH) $(LIB_PATH)
-	@echo "\n-------------------------------------------------"
-	@echo "|\033[32;1m\t$(NAME) has been created with -O2 !\t\t\033[0m|"
-	@echo "-------------------------------------------------\n"
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "\n-----------------------------------------------------------------"
+	@echo "|\033[32;1m\t$(NAME) has been created with $(OPTI_FLAGS) optimisation\t\t\033[0m|"
+	@echo "-----------------------------------------------------------------\n"
 
-$(OBJ_PATH)/%.o: $(SRC_DIR)/%.c
+$(OBJ_PATH)/%.o: %.c
 	@mkdir -p $(OBJ_PATH)
 	@$(CC) -o $@ -c $< $(CFLAGS) $(INC_PATH)
 
 clean:
 	@rm -rf $(OBJ_PATH)
 	@echo "\n-------------------------------------------------"
-	@echo "|\t\033[31mall $(NAME) files.o are deleted\033[0m\t\t|"
+	@echo "|\t\033[31mall libft_files.o are deleted\033[0m\t\t|"
 	@echo "-------------------------------------------------\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\n---------------------------------"
+	@echo "\n-----------------------------------------"
 	@echo "|\t\033[31m$(NAME) is deleted\033[0m\t\t|"
-	@echo "---------------------------------\n"
+	@echo "-----------------------------------------\n"
 
 re: fclean all
-
-libs:
-	@make -C libft
-	@make -C libmlx
-
-libs-clean:
-	@make -C libft clean
-	@make -C libmlx clean
-
-libs-fclean: libs-clean
-	@make -C libft fclean
-
-libs-re: libs-fclean
-	@make -C libft re
-	@make -C libmlx re
-
-fclean-all: fclean libs-fclean
-
-debug: $(OBJ_FILES)
-	@make -C libft
-	@make -C libmlx
-	@$(CC) -o $(NAME) $(OBJ_FILES) $(CFLAGS_DEBUG) $(INC_PATH) $(LIB_PATH)
-	@echo "\n-------------------------------------------------------------------------------------------------"
-	@echo "|\033[32;1m\tDebug mode for $(NAME) with $(CFLAGS_DEBUG)!\t\033[0m|"
-	@echo "-------------------------------------------------------------------------------------------------\n"
-
-norme:
-	norminette $(SRC)
-	norminette $(INC_PATH)*.h
-
-.PHONY:  all, clean, fclean, re
