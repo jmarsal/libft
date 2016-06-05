@@ -1,6 +1,6 @@
 #include "libft.h"
 
-t_gnl		*new_file(const int fd)
+static t_gnl	*new_file(const int fd)
 {
 	t_gnl	*new_link;
 
@@ -12,7 +12,7 @@ t_gnl		*new_file(const int fd)
 	return (new_link);
 }
 
-char		*get_line(t_gnl *list, char **line)
+static char		*get_line(t_gnl *list, char **line)
 {
 	char	*swap;
 	char	*complete_line;
@@ -39,7 +39,7 @@ char		*get_line(t_gnl *list, char **line)
 	return (complete_line);
 }
 
-int			read_file(int fd, t_gnl *list)
+static int		read_file_gnl(int fd, t_gnl *list)
 {
 	int		ret;
 	char	buffer[GNL_BUFF_SIZE + 1];
@@ -65,7 +65,7 @@ int			read_file(int fd, t_gnl *list)
 	return (ret);
 }
 
-int			get_next_line(int const fd, char **line)
+int				ft_get_next_line(int const fd, char **line)
 {
 	static	t_gnl		*list_files;
 	int					ret;
@@ -84,7 +84,7 @@ int			get_next_line(int const fd, char **line)
 			ft_lstadd_end((t_list**)&file_tmp, (t_list*)new_file(fd));
 		file_tmp = file_tmp->next;
 	}
-	if ((ret = read_file(fd, file_tmp)) == -1)
+	if ((ret = read_file_gnl(fd, file_tmp)) == -1)
 		return (-1);
 	file_tmp->line = get_line(file_tmp, line);
 	return ((!ft_strlen(file_tmp->line) && !ft_strlen(*line) && !ret) ? 0 : 1);
