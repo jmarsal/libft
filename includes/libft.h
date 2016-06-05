@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/31 13:50:10 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/05 03:00:06 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # define GNL_BUFF_SIZE 1024
 # define EOL '\n'
-
 /*
 ** LIST struct
 */
@@ -74,7 +73,7 @@ void				ft_print_memory(const void *addr, size_t size);
 ** File management
 */
 
-int					get_next_line(const int fd, char **line);
+int					ft_get_next_line(const int fd, char **line);
 
 /*
 **	Char control
@@ -137,6 +136,7 @@ char				*ft_strrev(char *str);
 */
 
 int					ft_atoi(const char *str);
+int					ft_atoi_base(char *str, int base);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 
