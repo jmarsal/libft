@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/03 15:03:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/03 22:47:55 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/08 13:05:40 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_inbase(char c, int base)
 	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)));
 }
 
-int	ft_atoi_base(char *str, int base)
+int			ft_atoi_base(char *str, int base)
 {
 	int	value;
 	int	sign;
