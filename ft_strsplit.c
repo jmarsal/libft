@@ -6,12 +6,12 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 23:31:37 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/08 12:42:58 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/10 16:29:04 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdio.h>
 
 /*
 **	Alloue (avec malloc(3)) et retourne un tableau de chaines de caractères
@@ -57,12 +57,18 @@ static char		*take_word_in_str(size_t *pointeur_i, char const *s, char c)
 	new_str = ft_strnew(len - *pointeur_i);
 	if (new_str)
 	{
-		while (*pointeur_i < len)
-		{
-			new_str[i] = s[*pointeur_i];
-			i++;
-			*pointeur_i += 1;
-		}
+		//printf("s = %s\n", s + *pointeur_i);
+		ft_memcpy(new_str, s + *pointeur_i, len);
+		// printf("new_str = %s\n", new_str);
+		//while (*pointeur_i < len - 1)
+		//	*pointeur_i += 1;
+		// while (*pointeur_i < len)
+		// {
+		// 	new_str[i] = s[*pointeur_i];
+		// 	i++;
+		// 	*pointeur_i += 1;
+		// }
+		//printf("new_str = %s\n", new_str);
 		return (new_str);
 	}
 	return (0);
@@ -72,11 +78,9 @@ char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	size_t	i;
-	size_t	*pointeur_i;
 	size_t	j;
 
 	i = 0;
-	pointeur_i = &i;
 	j = 0;
 	tab = NULL;
 	if (s)
@@ -85,10 +89,10 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		while (j < how_many_words(s, c))
 		{
-			while (s[*pointeur_i] == c)
-				*pointeur_i += 1;
-			if (s[*pointeur_i] != c && s[*pointeur_i])
-				tab[j++] = take_word_in_str(pointeur_i, s, c);
+			while (s[i] == c)
+				i++;
+			if (s[i] != c && s[i])
+				tab[j++] = take_word_in_str(&i, s, c);
 		}
 		tab[j] = 0;
 		return (tab);
