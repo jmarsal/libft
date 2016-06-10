@@ -6,12 +6,11 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 23:31:37 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/10 16:29:04 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/11 00:56:29 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /*
 **	Alloue (avec malloc(3)) et retourne un tableau de chaines de caractères
@@ -44,6 +43,56 @@ static size_t	how_many_words(char const *s, char c)
 	return (j);
 }
 
+static void		ft_strsplit_bulk16(size_t *len, size_t *pointeur_i,
+												char const *s, char *dst)
+{
+	size_t	i;
+
+	i = 0;
+	while (pointeur_i + 16 < len)
+	{
+		dst[i] = s[*pointeur_i];
+		dst[i + 1] = s[*pointeur_i + 1];
+		dst[i + 2] = s[*pointeur_i + 2];
+		dst[i + 3] = s[*pointeur_i + 3];
+		dst[i + 4] = s[*pointeur_i + 4];
+		dst[i + 5] = s[*pointeur_i + 5];
+		dst[i + 6] = s[*pointeur_i + 6];
+		dst[i + 7] = s[*pointeur_i + 7];
+		dst[i + 8] = s[*pointeur_i + 8];
+		dst[i + 9] = s[*pointeur_i + 9];
+		dst[i + 10] = s[*pointeur_i + 10];
+		dst[i + 11] = s[*pointeur_i + 11];
+		dst[i + 12] = s[*pointeur_i + 12];
+		dst[i + 13] = s[*pointeur_i + 13];
+		dst[i + 14] = s[*pointeur_i + 14];
+		dst[i + 15] = s[*pointeur_i + 15];
+		i += 16;
+		*pointeur_i += 16;
+	}
+}
+
+static void		ft_strsplit_bulk8(size_t *len, size_t *pointeur_i,
+												char const *s, char *dst)
+{
+	size_t	i;
+
+	i = 0;
+	while (pointeur_i + 8 < len)
+	{
+		dst[i] = s[*pointeur_i];
+		dst[i + 1] = s[*pointeur_i + 1];
+		dst[i + 2] = s[*pointeur_i + 2];
+		dst[i + 3] = s[*pointeur_i + 3];
+		dst[i + 4] = s[*pointeur_i + 4];
+		dst[i + 5] = s[*pointeur_i + 5];
+		dst[i + 6] = s[*pointeur_i + 6];
+		dst[i + 7] = s[*pointeur_i + 7];
+		i += 8;
+		*pointeur_i += 8;
+	}
+}
+
 static char		*take_word_in_str(size_t *pointeur_i, char const *s, char c)
 {
 	size_t	len;
@@ -57,18 +106,15 @@ static char		*take_word_in_str(size_t *pointeur_i, char const *s, char c)
 	new_str = ft_strnew(len - *pointeur_i);
 	if (new_str)
 	{
-		//printf("s = %s\n", s + *pointeur_i);
-		ft_memcpy(new_str, s + *pointeur_i, len);
-		// printf("new_str = %s\n", new_str);
-		//while (*pointeur_i < len - 1)
-		//	*pointeur_i += 1;
-		// while (*pointeur_i < len)
-		// {
-		// 	new_str[i] = s[*pointeur_i];
-		// 	i++;
-		// 	*pointeur_i += 1;
-		// }
-		//printf("new_str = %s\n", new_str);
+		ft_strsplit_bulk16(&len, pointeur_i, s, new_str);
+		ft_strsplit_bulk8(&len, pointeur_i, s, new_str);
+		while (*pointeur_i < len)
+		{
+			new_str[i] = s[*pointeur_i];
+			i++;
+			*pointeur_i += 1;
+		}
+
 		return (new_str);
 	}
 	return (0);
