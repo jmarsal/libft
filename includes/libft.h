@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/18 23:11:12 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/18 23:29:04 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int					ft_atoi(const char *str);
 int					ft_atoi_base(char *str, int base);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
-int					ft_get_number(const char *str, size_t *i);
+char				*ft_get_number(const char *str, size_t *i);
 
 /*
 **	Mathematics

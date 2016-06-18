@@ -14,12 +14,11 @@ static char	*init_number(const char *str, size_t *i, size_t sign)
 	return (number);
 }
 
-int			ft_get_number(const char *str, size_t *i)
+char		*ft_get_number(const char *str, size_t *i)
 {
 	size_t	sign;
 	size_t	index;
 	char	*number;
-	int		ret;
 
 	sign = (str[*i] == '-') ? 1 : 0;
 	index = 0;
@@ -34,5 +33,5 @@ int			ft_get_number(const char *str, size_t *i)
 	}
 	number[index] = '\0';
 	*i += index;
-	return (ret = ft_atoi((const)number));
+	return (number);
 }
