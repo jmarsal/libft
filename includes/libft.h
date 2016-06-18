@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/15 15:14:16 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/18 23:11:12 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strnstr(const char *big, const char *little,
-		size_t len);
+								size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
@@ -141,6 +141,7 @@ int					ft_atoi(const char *str);
 int					ft_atoi_base(char *str, int base);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
+int					ft_get_number(const char *str, size_t *i);
 
 /*
 **	Mathematics
