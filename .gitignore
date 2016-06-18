@@ -1,0 +1,11 @@
+# Exclusion du dossier /obj crées à la compilation
+
+/obj
+
+# Exclusion des ".a" et de la libft
+
+*.a
+
+# Exclusion des ".DS"
+
+*.DS
