@@ -1,12 +1,12 @@
 #include "libft.h"
 
-static char	*init_number(const char *line, size_t *i, size_t sign)
+static char	*init_number(const char *str, size_t *i, size_t sign)
 {
 	size_t	len;
 	char	*number;
 
 	len = 0;
-	while (ft_isdigit(line[*i + len]) && line[*i + len])
+	while (ft_isdigit(str[*i + len]) && str[*i + len])
 		++len;
 	len = (sign) ? ++len : len;
 	if (!(number = ft_memalloc(sizeof(char) * (len + 1))))
@@ -21,15 +21,15 @@ int			ft_get_number(const char *str, size_t *i)
 	char	*number;
 	int		ret;
 
-	sign = (line[*i] == '-') ? 1 : 0;
+	sign = (str[*i] == '-') ? 1 : 0;
 	index = 0;
-	if (!(number = init_number(line, i, sign)))
+	if (!(number = init_number(str, i, sign)))
 		return (NULL);
 	if (sign)
 		number[index++] = '-';
-	while (line[*i + index] && ft_isdigit(line[*i + index]))
+	while (str[*i + index] && ft_isdigit(str[*i + index]))
 	{
-		number[index] = line[*i + index];
+		number[index] = str[*i + index];
 		index++;
 	}
 	number[index] = '\0';
