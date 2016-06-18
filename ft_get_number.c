@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_number.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/18 23:36:42 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/06/18 23:46:47 by jmarsal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*init_number(const char *str, size_t *i, size_t sign)
@@ -6,7 +18,7 @@ static char	*init_number(const char *str, size_t *i, size_t sign)
 	char	*number;
 
 	len = 0;
-	while (ft_isdigit(str[*i + len]) && str[*i + len])
+	while (str[*i + len] && ft_isdigit(str[*i + len]))
 		++len;
 	len = (sign) ? ++len : len;
 	if (!(number = ft_memalloc(sizeof(char) * (len + 1))))
