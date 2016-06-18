@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/18 23:29:04 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/19 00:15:55 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,5 +162,11 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstadd_end(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+/*
+** Mlx
+*/
+
+int					ft_get_color_mlx(const char *line, size_t *i);
 
 #endif
