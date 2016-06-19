@@ -6,13 +6,13 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/06/19 23:25:18 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/06/19 23:26:07 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-OPTI_FLAGS = -Ofast
+OPTI_FLAGS = -O2
 CFLAGS = $(OPTI_FLAGS) -Wall -Wextra -Werror
 INC_PATH = -I./includes/
 SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
