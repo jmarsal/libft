@@ -6,40 +6,41 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/03 15:03:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/08 13:05:40 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/23 15:03:03 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_inbase(char c, int base)
+int     ft_atoi_base(char *str, int str_base)
 {
-	if (base <= 10)
-		return (c >= '0' && c <= '9');
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)));
-}
+    int i;
+    int power;
+    int uc;
+    int result;
 
-int			ft_atoi_base(char *str, int base)
-{
-	int	value;
-	int	sign;
-
-	value = 0;
-	if (base <= 1 || base > 36)
-		return (0);
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-			|| *str == '\r' || *str == '\v')
-		str++;
-	sign = (*str == '-') ? -1 : 1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_inbase(*str, base))
-	{
-		if (*str - 'A' >= 0)
-			value = value * base + (*str - 'A' + 10);
-		else
-			value = value * base + (*str - '0');
-		str++;
-	}
-	return (value * sign);
+    i = ft_strlen(str) - 1;
+    power = 1;
+    result = 0;
+    while (i >= 0)
+    {
+        if (str[i] == 'F' || str[i] == 'f')
+            uc = 15;
+        else if (str[i] == 'E' || str[i] == 'e')
+            uc = 14;
+        else if (str[i] == 'D' || str[i] == 'd')
+            uc = 13;
+        else if (str[i] == 'C' || str[i] == 'c')
+            uc = 12;
+        else if (str[i] == 'B' || str[i] == 'b')
+            uc = 11;
+        else if (str[i] == 'A' || str[i] == 'a')
+            uc = 10;
+        else if (str[i] >= '0' && str[i] <= '9')
+            uc = str[i] - '0';
+        result = result + uc * power;
+        power = power * str_base;
+        i--;
+    }
+    return (result);
 }
