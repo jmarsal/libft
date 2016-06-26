@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/24 14:33:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/25 22:32:36 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int					ft_tolower(int c);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, size_t len);
-char				*ft_strcut_before(const char *s, int c);
+char				*ft_strchr_before(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);

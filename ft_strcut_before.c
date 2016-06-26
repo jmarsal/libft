@@ -6,13 +6,18 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/24 14:33:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/24 15:01:12 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/25 22:32:05 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strcut_before(const char *s, int c)
+/*
+** Malloc et retourne tout ce qui se trouve avant 'c',
+** return NULL si le malloc n'est pas possible. 
+*/
+
+char				*ft_strchr_before(const char *s, int c)
 {
 	size_t	len;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/03 15:03:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/23 15:03:03 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/26 16:04:16 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int     ft_atoi_base(char *str, int str_base)
     i = ft_strlen(str) - 1;
     power = 1;
     result = 0;
+	uc = 0;
     while (i >= 0)
     {
         if (str[i] == 'F' || str[i] == 'f')

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 23:31:37 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/11 01:07:31 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/06/26 14:20:39 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char		*take_word_in_str(size_t *pointeur_i, char const *s, char c)
 		}
 		return (new_str);
 	}
-	return (0);
+	return (NULL);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -90,5 +90,5 @@ char			**ft_strsplit(char const *s, char c)
 		tab[j] = 0;
 		return (tab);
 	}
-	return (0);
+	return (NULL);
 }
