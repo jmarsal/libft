@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/18 23:36:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/18 23:49:23 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/08/12 01:30:22 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*init_number(const char *str, size_t *i, size_t sign)
 	len = 0;
 	while (str[*i + len] && ft_isdigit(str[*i + len]))
 		++len;
-	len = (sign) ? ++len : len;
+	len = (sign) ? 1 + len : len;
 	if (!(number = ft_memalloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	return (number);
