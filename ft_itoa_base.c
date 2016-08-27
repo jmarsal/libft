@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 17:21:41 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/08/22 16:42:36 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/08/27 02:08:12 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		*ft_itoa_base(int value, int base)
 	val = (neg) ? -(long)value : value;
 	if ((number = ft_check_error(base)) == NULL)
 		return (NULL);
-	if (neg && (base == 16 || base == 2))
+	if (neg && (base != 10))
 		val = (val ^ 0xffffffff) + 1;
 	if (value == 0)
 		number[i] = '0';
