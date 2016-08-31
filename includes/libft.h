@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/27 10:53:21 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/08/29 23:37:53 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define GNL_BUFF_SIZE 1024
 # define EOL '\n'
@@ -63,6 +64,7 @@ void				*ft_realloc(void *ptr, size_t size, size_t oldsize);
 
 void				ft_putchar(char c);
 void				ft_putnbr(int nb);
+void				ft_putlnbr(long int nb);
 void				ft_putstr(char const *str);
 void				ft_putendl(char const *s);
 void				ft_putchar_fd(char c, int fd);
@@ -141,7 +143,9 @@ char				*ft_strrev(char *str);
 int					ft_atoi(const char *str);
 int					ft_atoi_base(char *str, int base);
 char				*ft_itoa(int n);
+char				*ft_litoa(long int n);
 char				*ft_itoa_base(int value, int base);
+char				*ft_litoa_base(long int value, int base);
 char				*ft_get_number(const char *str, size_t *i);
 
 /*
