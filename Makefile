@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/08/29 22:19:56 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/08/31 18:00:57 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
 	ft_print_memory.c ft_isupper.c ft_islower.c ft_isspace.c ft_strnlen.c \
 	ft_strtoupper.c ft_strtolower.c ft_abs.c ft_min.c ft_max.c ft_strrev.c \
 	ft_get_next_line.c ft_atoi_base.c ft_realloc.c ft_get_number.c \
-	ft_get_color_mlx.c ft_strchr_bef.c ft_putlnbr.c ft_litoa.c ft_litoa_base.c 
+	ft_get_color_mlx.c ft_strchr_bef.c ft_putlnbr.c ft_litoa.c ft_litoa_base.c \
+	ft_ulitoa.c ft_ulitoa_base.c ft_putllnbr.c
 OBJ_PATH = ./obj
 OBJ = $(SRC:%.c=$(OBJ_PATH)/%.o)
 
