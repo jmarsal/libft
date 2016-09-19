@@ -6,17 +6,19 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/29 22:11:35 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/08/31 02:22:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/09/19 02:21:44 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*last_caract(char *number, long int i, int base)
+static char	*last_caract(char *number, int i, int base, long value)
 {
 	char	*str;
 
 	str = "1";
+	if (value == LONG_MIN && base != 8)
+		number[0] += 1;
 	if (base == 10)
 		number[i] = '-';
 	if (base != 10)
@@ -41,9 +43,9 @@ static char	*check_error(long long val, int base, long value)
 	return (str);
 }
 
-char		*ft_litoa_base(long int value, int base)
+char		*ft_litoa_base(long value, int base)
 {
-	long int	i;
+	int			i;
 	int			neg;
 	long long	val;
 	char		*number;
@@ -53,6 +55,7 @@ char		*ft_litoa_base(long int value, int base)
 	i = 0;
 	neg = (value < 0) ? 1 : 0;
 	val = (neg) ? -(long long)value : value;
+	value == LONG_MIN && base != 8 ? val -= 1 : val;
 	if ((number = check_error(val, base, value)) == NULL)
 	return (NULL);
 	if (neg && base == 8 && value >= INT_MIN)
@@ -65,6 +68,6 @@ char		*ft_litoa_base(long int value, int base)
 		val /= base;
 	}
 	if (neg)
-		last_caract(number, i, base);
+		last_caract(number, i, base, value);
 	return (ft_strrev(number));
 }
