@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/03 23:20:19 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/04 01:02:56 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,7 @@ char				*ft_strchr_bef(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
-char				*ft_strnstr(const char *big, const char *little,
-								size_t len);
+char				*ft_strnstr(const char *big, const char *little, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
@@ -136,8 +135,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strrev(char *str);
-char				*ft_strreplace(const char *str, const char *find,
-									const char *replace);
+char				*ft_strreplace(const char *str, const char *find, const char *replace);
 
 /*
 **	Conversion

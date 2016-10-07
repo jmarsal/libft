@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 22:53:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/04 00:50:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/04 02:46:37 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,21 +58,36 @@ char	*ft_strreplace(const char *str, const char *find,
 	char	*str_after;
 	size_t	i;
 	size_t	j;
+	int		test;
 
 	str_before = NULL;
 	i = 0;
+	test = 0;
 	if (!(str || find || replace))
 		return (NULL);
+	if (find[0] == '{' && find[ft_strlen(find) - 1] == '}')
+	{
+		test = 1;
+		find = ft_strdup(find + 1);
+		find = ft_strchr_bef(find, '}');
+	}
 	while (str[i++])
 	{
 		if ((ft_strncmp(str + i, find, ft_strlen(find))) == 0)
 		{
 			str_before = get_bef(str_before, i);
 			j = (ft_strlen(str_before)) ? ft_strlen(str_before + 1) : 0;
-			str_before = ft_strjoin(ret_strcpy(str_before, str, j, i),
-												replace);
+			str_before = test ?
+					ft_strjoin(ret_strcpy(str_before, str, j, i - 1), replace) :
+					ft_strjoin(ret_strcpy(str_before, str, j, i), replace);
 			i += ft_strlen(find);
 			str_before = ret_newstr(str_before, str_after, &i, str);
+			if (test)
+			{
+				str_after = ft_strchr(str_before, '}');
+				str_before = ft_strchr_bef(str_before, '}');
+				str_before = ft_strjoin(str_before, str_after + 1);
+			}
 		}
 	}
 	return (str_before ? str_before : (char *)str);	
