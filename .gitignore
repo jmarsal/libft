@@ -9,3 +9,7 @@
 # Exclusion des ".DS"
 
 *.DS
+.vscode
+main
+main.c
+test.sh
