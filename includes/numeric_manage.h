@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clear_tab.c                                     :+:      :+:    :+:   */
+/*   numeric_manage.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/08 23:18:21 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:19:40 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/10/10 16:09:47 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/10 16:11:12 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef NUMERIC_MANAGE
+# define NUMERIC_MANAGE
 
-int		ft_clear_tab(char **tab)
-{
-	int	i;
+void	ft_swap(int *a, int *b);
 
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-		{
-			free(tab[i]);
-			i++;
-		}
-		free(tab);
-	}
-	return (1);
-}
+#endif
