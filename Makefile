@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/11 11:57:29 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/10/11 12:02:40 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CFLAGS = -Wall -Wextra -Werror $(OPTI_FLAGS)
 
 # Headers
 INC_PATH = -I./includes/
-<<<<<<< HEAD
 
 # Sources
 SRC_PATH = src_str_manage
@@ -61,7 +60,8 @@ SRC_STR_MANAGE =		ft_strcat.c \
 						ft_strsplit.c \
 						ft_strtoupper.c \
 						ft_strtolower.c \
-						ft_strrev.c
+						ft_strrev.c \
+						ft_strreplace.c
 
 SRC_STR_CONTROL =		ft_strlen.c \
 						ft_strnlen.c \
