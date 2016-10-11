@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/29 22:11:35 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/08/31 17:41:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/09/22 09:45:41 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		*ft_ulitoa_base(unsigned long value, int base)
 	i = 0;
 	val = value;
 	if ((number = check_error(val, base, value)) == NULL)
-	return (NULL);
+		return (NULL);
 	if (value == 0)
 		number[i] = '0';
 	while (val)

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/29 22:11:35 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/09/20 15:19:31 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/09/29 00:18:02 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		*ft_litoa_base(long value, int base)
 	val = (neg) ? -(long long)value : value;
 	value == LONG_MIN && base != 8 ? val -= 1 : val;
 	if ((number = check_error(val, base, value)) == NULL)
-	return (NULL);
+		return (NULL);
 	if (neg && base == 8 && value >= INT_MIN)
 		val = (val ^ 0x7fffffffffffffff) + 1;
 	if (value == 0)

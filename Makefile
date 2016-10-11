@@ -6,7 +6,11 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2016/10/11 00:06:07 by jmarsal          ###   ########.fr        #
+=======
+#    Updated: 2016/10/03 22:54:44 by jmarsal          ###   ########.fr        #
+>>>>>>> f13209189306d91a666751c0d084a2ad00409824
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +22,7 @@ CFLAGS = -Wall -Wextra -Werror $(OPTI_FLAGS)
 
 # Headers
 INC_PATH = -I./includes/
+<<<<<<< HEAD
 
 # Sources
 SRC_PATH = src_str_manage
@@ -143,6 +148,24 @@ SRCS += $(SRC_FILE_MANAGE) $(SRC_MATH) $(SRC_MLX) $(SRC_STR_CONTROL) $(SRC_NUMER
 SRCS += $(SRC_OUTPUT) $(SRC_ARRAY)
 
 # Objects
+=======
+SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strncmp.c \
+	ft_strcmp.c ft_strstr.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strcpy.c \
+	ft_strncpy.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isalnum.c \
+	ft_isprint.c ft_toupper.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_bzero.c\
+	ft_memmove.c ft_memchr.c ft_memcmp.c ft_strdup.c ft_strchr.c ft_strrchr.c \
+	ft_strnstr.c ft_toupper.c ft_tolower.c ft_memalloc.c ft_memdel.c \
+	ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c \
+	ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c\
+	ft_strsplit.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c \
+	ft_putendl.c ft_putendl_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
+	ft_lstadd.c ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_itoa_base.c \
+	ft_print_memory.c ft_isupper.c ft_islower.c ft_isspace.c ft_strnlen.c \
+	ft_strtoupper.c ft_strtolower.c ft_abs.c ft_min.c ft_max.c ft_strrev.c \
+	ft_get_next_line.c ft_atoi_base.c ft_realloc.c ft_get_number.c \
+	ft_get_color_mlx.c ft_strchr_bef.c ft_putlnbr.c ft_litoa.c ft_litoa_base.c \
+	ft_ulitoa.c ft_ulitoa_base.c ft_putllnbr.c ft_strreplace.c
+>>>>>>> f13209189306d91a666751c0d084a2ad00409824
 OBJ_PATH = ./obj
 OBJ = $(SRCS:%.c=$(OBJ_PATH)/%.o)
 
