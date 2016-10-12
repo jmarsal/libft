@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 22:53:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/04 02:46:37 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/12 16:01:33 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static char	*ret_newstr(char *str_before, char *str_after, size_t *i,
 	str_after = ft_strdup(str + *i);
 	str_before = ft_strjoin(str_before, str_after);
 	free(str_after);
+	str_after = NULL;
 	return (str_before);
 }
 

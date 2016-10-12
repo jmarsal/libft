@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 13:05:20 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/08 13:05:22 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/12 15:58:27 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static char		*get_line(t_gnl *list, char **line)
 			swap = complete_line;
 			complete_line = ft_strdup(complete_line + (i + 1));
 			free(swap);
+			swap = NULL;
 			return (complete_line);
 		}
 		i++;
@@ -70,6 +71,7 @@ static int		read_file_gnl(int fd, t_gnl *list)
 			if (!(list->line = ft_strjoin(list->line, buffer)))
 				return (-1);
 			free(swap);
+			swap = NULL;
 		}
 		if (ret < GNL_BUFF_SIZE)
 			return (ret);
