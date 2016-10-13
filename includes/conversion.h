@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 15:15:02 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/10 15:40:53 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/13 12:49:56 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ char	*ft_litoa_base(long int value, int base);
 char	*ft_ulitoa(unsigned long n);
 char	*ft_ulitoa_base(unsigned long value, int base);
 char	*ft_get_number(const char *str, size_t *i);
+char	*ft_wcconv(wchar_t wchar);
+char	*ft_wcsconv(wchar_t *ws);
 
 #endif

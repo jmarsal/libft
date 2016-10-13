@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/11 12:02:40 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/10/13 12:50:58 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ SRC_STR_CONTROL =		ft_strlen.c \
 						ft_strncmp.c \
 						ft_strequ.c \
 						ft_strnequ.c \
-						ft_strchrpos.c
+						ft_strchrpos.c \
+						ft_wcslen.c
 
 SRC_OUTPUT =			ft_putchar.c \
 						ft_putstr.c \
@@ -105,7 +106,9 @@ SRC_CONVERSION =		ft_litoa.c \
 						ft_itoa_base.c \
 						ft_atoi.c \
 						ft_atoi_base.c \
-						ft_get_number.c
+						ft_get_number.c \
+						ft_wcconv.c \
+						ft_wcsconv.c \
 
 
 SRC_LST = 				ft_lstnew.c \
