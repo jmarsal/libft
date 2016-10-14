@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/13 12:50:58 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/10/14 11:14:32 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ SRC_FILE_MANAGE =		ft_get_next_line.c
 
 SRC_CONVERSION =		ft_litoa.c \
 						ft_litoa_base.c \
+						ft_utoa_base.c \
 						ft_ulitoa.c \
 						ft_ulitoa_base.c \
 						ft_itoa.c \
