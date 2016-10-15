@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	ft_memsetblock(unsigned long *ptr, unsigned long cccc, size_t *len)
+static void		ft_memsetblock(long *ptr, unsigned long cccc, size_t *len)
 {
 	unsigned long	*p;
 	size_t			size;
@@ -38,12 +38,12 @@ static void	ft_memsetblock(unsigned long *ptr, unsigned long cccc, size_t *len)
 	*len = nlen;
 }
 
-void		*ft_memset(void *b, int c, size_t len)
+void			*ft_memset(void *b, int c, size_t len)
 {
-	unsigned long int	ptr;
+	long int			ptr;
 	unsigned long int	cccc;
 
-	ptr = (unsigned long int)b;
+	ptr = (long int)b;
 	cccc = (unsigned char)c;
 	cccc |= cccc << 24 | cccc << 16 | cccc << 8;
 	cccc |= cccc << 32;
