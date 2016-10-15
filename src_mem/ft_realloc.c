@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:13:31 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/12 16:00:26 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/15 23:58:03 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ void	*ft_realloc(void *ptr, size_t size, size_t oldsize)
 		return (ft_memalloc(size));
 	if (size == 0)
 	{
-		free(ptr);
-		ptr = NULL;
+		ft_free_null(ptr);
 		return (NULL);
 	}
 	if ((p = ft_memalloc(size)) == NULL)
 		return (NULL);
 	ft_memcpy(p, ptr, oldsize);
-	free(ptr);
-	ptr = NULL;
+	ft_free_null(ptr);
 	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/19 00:12:48 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/12 16:00:46 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/15 23:58:24 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	ft_get_color_mlx(const char *line, size_t *i)
 	}
 	number[len] = '\0';
 	color = ft_atoi_base(number, 16);
-	free(number);
-	number = NULL;
+	ft_free_null(number);
 	return (color);
 }

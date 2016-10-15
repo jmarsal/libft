@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_buffer_twin.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:31:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:07:43 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/10/16 01:05:53 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/16 01:14:56 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-/*
-**	Prend en paramètre l’adresse d’un pointeur dont la zone pointée
-**	doit être libérée avec free(3), puis le pointeur est mis à NULL.
-*/
-
-void	ft_memdel(void **ap)
+t_buffer	*buffer_twin(t_buffer *b)
 {
-	ft_free_null(*ap);
+	t_buffer	*copy;
+	
+	copy = buffer_new(b->sizemax);
+	if (copy == NULL)
+		return (NULL);
+	copy->len = b->len;
+	ft_memcpy(copy->str, b->str, b->len);
+	return (copy);
 }

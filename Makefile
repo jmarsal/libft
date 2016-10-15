@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/15 23:48:59 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/10/16 01:08:23 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_PATH += src_output
 SRC_PATH += src_str_control
 SRC_PATH += src_numeric_manage
 SRC_PATH += src_array
+SRC_PATH += src_buffer
 
 vpath %.c $(SRC_PATH)
 
@@ -143,10 +144,22 @@ SRC_CHAR_CONTROL =		ft_isupper.c \
 						ft_toupper.c \
 						ft_tolower.c
 
+SRC_BUFFER =			ft_buffer_new.c \
+						ft_buffer_add.c \
+						ft_buffer_append.c \
+						ft_buffer_cat.c \
+						ft_buffer_destroy.c \
+						ft_buffer_merge.c \
+						ft_buffer_remove.c \
+						ft_buffer_replace.c \
+						ft_buffer_resize.c \
+						ft_buffer_rewind.c \
+						ft_buffer_set.c
+
 
 SRCS += $(SRC_STR_MANAGE) $(SRC_LST) $(SRC_MEM) $(SRC_CHAR_CONTROL) $(SRC_CONVERSION)
 SRCS += $(SRC_FILE_MANAGE) $(SRC_MATH) $(SRC_MLX) $(SRC_STR_CONTROL) $(SRC_NUMERIC_MANAGE)
-SRCS += $(SRC_OUTPUT) $(SRC_ARRAY)
+SRCS += $(SRC_OUTPUT) $(SRC_ARRAY) $(SRC_BUFFER)
 
 # Objects
 OBJ_PATH = ./obj

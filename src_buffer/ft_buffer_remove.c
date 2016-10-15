@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_buffer_remove.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:31:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:07:43 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/10/16 00:58:15 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/16 01:14:00 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 /*
-**	Prend en paramètre l’adresse d’un pointeur dont la zone pointée
-**	doit être libérée avec free(3), puis le pointeur est mis à NULL.
+** Return the numbers of bytes effectively remove
 */
 
-void	ft_memdel(void **ap)
+size_t	buffer_remove(t_buffer *b, size_t pos, size_t size)
 {
-	ft_free_null(*ap);
+	size_t	removed;
+	
+	if (pos >= b->len)
+		return (0);
+	if (pos + size >= b->len)
+	{
+		removed = b->len - pos;
+		b->len = pos;
+	}
+	else
+	{
+		removed = size;
+		ft_memmove(b->str + pos, b->str + pos + size, b->len - (pos + size));
+		b->len -= size;
+	}
+	b->str[b->len] = '\0';
+	return (removed);
 }

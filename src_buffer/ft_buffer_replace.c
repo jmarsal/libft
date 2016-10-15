@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_buffer_replace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:31:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:07:43 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/10/16 00:59:19 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/16 00:59:43 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-/*
-**	Prend en paramètre l’adresse d’un pointeur dont la zone pointée
-**	doit être libérée avec free(3), puis le pointeur est mis à NULL.
-*/
-
-void	ft_memdel(void **ap)
+t_buffer	*buffer_replace(t_buffer *b, const char *s)
 {
-	ft_free_null(*ap);
+	return (buffer_nreplace(b, s, ft_strlen(s)));
+}
+
+t_buffer	*buffer_nreplace(t_buffer *b, const char *s, size_t len)
+{
+	b->len = 0;
+	buffer_ncat(b, s, len);
+	b->str[b->len] = '\0';
+	return (b);
 }

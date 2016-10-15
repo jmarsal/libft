@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 23:51:52 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/11 00:05:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/15 23:53:54 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ static void	ft_array_resize(t_array *array)
 	array->size *= 2;
 	while (i < array->size)
 		cells[i++] = NULL;
-	free(array->cells);
-	array->cells = cells;
+	ft_free_null(array->cells);
 }
 
 void		ft_array_add(t_array *array, void *ptr)

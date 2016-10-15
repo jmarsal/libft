@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:08:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/11 11:58:26 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/16 00:07:15 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@
 # include "mathematic.h"
 # include "numeric_manage.h"
 # include "array.h"
+# include "buffer.h"
 
 #endif

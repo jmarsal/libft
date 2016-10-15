@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_buffer_toa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:31:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:07:43 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/10/16 01:04:44 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/16 01:14:40 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-/*
-**	Prend en paramètre l’adresse d’un pointeur dont la zone pointée
-**	doit être libérée avec free(3), puis le pointeur est mis à NULL.
-*/
-
-void	ft_memdel(void **ap)
+t_buffer	*buffer_utoa(t_buffer *b, unsigned long long value, int base)
 {
-	ft_free_null(*ap);
+	char	*n;
+	
+	n = ft_utoa_base(value, base);
+	buffer_cat(b, n);
+	free(n);
+	return (b);
 }

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_buffer_resize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:31:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:07:43 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/10/16 01:00:28 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/10/16 01:14:23 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-/*
-**	Prend en paramètre l’adresse d’un pointeur dont la zone pointée
-**	doit être libérée avec free(3), puis le pointeur est mis à NULL.
-*/
-
-void	ft_memdel(void **ap)
+t_buffer	*buffer_resize(t_buffer *b, size_t len)
 {
-	ft_free_null(*ap);
+	void	*new;
+	size_t	newsize;
+	
+	newsize = b->sizemax * BUFFER_GROWTH_FACTOR;
+	while (b->len + len >= newsize)
+		newsize *= BUFFER_GROWTH_FACTOR;
+	new = ft_realloc(b->str, newsize, b->sizemax);
+	if (new == NULL)
+		return (NULL);
+	b->sizemax = newsize;
+	b->str = new;
+	return (b);
 }
