@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/14 11:14:32 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/10/15 23:48:59 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror $(OPTI_FLAGS)
 INC_PATH = -I./includes/
 
 # Sources
-SRC_PATH = src_str_manage
+SRC_PATH += src_str_manage
 SRC_PATH += src_list
 SRC_PATH += src_mem
 SRC_PATH += src_char_control
@@ -107,9 +107,9 @@ SRC_CONVERSION =		ft_litoa.c \
 						ft_itoa_base.c \
 						ft_atoi.c \
 						ft_atoi_base.c \
-						ft_get_number.c \
+						ft_get_number.c \
 						ft_wcconv.c \
-						ft_wcsconv.c \
+						ft_wcsconv.c
 
 
 SRC_LST = 				ft_lstnew.c \
@@ -129,7 +129,8 @@ SRC_MEM =				ft_memalloc.c \
 						ft_bzero.c\
 						ft_memmove.c \
 						ft_memchr.c \
-						ft_memcmp.c
+						ft_memcmp.c \
+						ft_free_null.c
 
 SRC_CHAR_CONTROL =		ft_isupper.c \
 						ft_islower.c \
@@ -143,7 +144,7 @@ SRC_CHAR_CONTROL =		ft_isupper.c \
 						ft_tolower.c
 
 
-SRCS = $(SRC_STR_MANAGE) $(SRC_LST) $(SRC_MEM) $(SRC_CHAR_CONTROL) $(SRC_CONVERSION)
+SRCS += $(SRC_STR_MANAGE) $(SRC_LST) $(SRC_MEM) $(SRC_CHAR_CONTROL) $(SRC_CONVERSION)
 SRCS += $(SRC_FILE_MANAGE) $(SRC_MATH) $(SRC_MLX) $(SRC_STR_CONTROL) $(SRC_NUMERIC_MANAGE)
 SRCS += $(SRC_OUTPUT) $(SRC_ARRAY)
 
