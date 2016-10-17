@@ -6,13 +6,13 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 01:00:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:14:23 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/17 17:42:39 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_buffer	*buffer_resize(t_buffer *b, size_t len)
+t_buffer	*ft_buffer_resize(t_buffer *b, size_t len)
 {
 	void	*new;
 	size_t	newsize;

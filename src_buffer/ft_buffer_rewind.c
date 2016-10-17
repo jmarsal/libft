@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 01:01:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:09:39 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/17 17:47:55 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** 0 en cas de succès
 */
 
-int		buffer_rewind(t_buffer *b, size_t n)
+int		ft_buffer_rewind(t_buffer *b, size_t n)
 {
 	size_t	nlen;
 
@@ -35,7 +35,7 @@ int		buffer_rewind(t_buffer *b, size_t n)
 ** Retourne le nombre de char reculé
 */
 
-size_t	buffer_rewindchr(t_buffer *b, int c)
+size_t	ft_buffer_rewindchr(t_buffer *b, int c)
 {
 	int		pos;
 	size_t	ret;

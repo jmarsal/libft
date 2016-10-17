@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffer_replace.c                                :+:      :+:    :+:   */
+/*   ft_ft_buffer_replace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-t_buffer	*buffer_replace(t_buffer *b, const char *s)
+t_buffer	*ft_buffer_replace(t_buffer *b, const char *s)
 {
-	return (buffer_nreplace(b, s, ft_strlen(s)));
+	return (ft_buffer_nreplace(b, s, ft_strlen(s)));
 }
 
-t_buffer	*buffer_nreplace(t_buffer *b, const char *s, size_t len)
+t_buffer	*ft_buffer_nreplace(t_buffer *b, const char *s, size_t len)
 {
 	b->len = 0;
-	buffer_ncat(b, s, len);
+	ft_buffer_ncat(b, s, len);
 	b->str[b->len] = '\0';
 	return (b);
 }

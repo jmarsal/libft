@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:51:06 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 00:55:22 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/17 17:50:32 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Return the new size of dst or -1 on error
 */
 
-t_buffer	*buffer_append(t_buffer *dst, t_buffer *src)
+t_buffer	*ft_buffer_append(t_buffer *dst, t_buffer *src)
 {
-	return (buffer_ncat(dst, src->str, src->len));
+	return (ft_buffer_ncat(dst, src->str, src->len));
 }

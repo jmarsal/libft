@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:58:15 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:14:00 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/17 17:44:22 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Return the numbers of bytes effectively remove
 */
 
-size_t	buffer_remove(t_buffer *b, size_t pos, size_t size)
+size_t	ft_buffer_remove(t_buffer *b, size_t pos, size_t size)
 {
 	size_t	removed;
 	

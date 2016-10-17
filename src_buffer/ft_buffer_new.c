@@ -6,13 +6,13 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:09:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/16 01:13:15 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/17 17:43:18 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_buffer	*buffer_init(t_buffer *b, size_t size)
+t_buffer	*ft_buffer_init(t_buffer *b, size_t size)
 {
 	size_t	s;
 
@@ -25,26 +25,26 @@ t_buffer	*buffer_init(t_buffer *b, size_t size)
 	return (b);
 }
 
-t_buffer	*buffer_new(size_t size)
+t_buffer	*ft_buffer_new(size_t size)
 {
 	t_buffer	*new;
 
 	new = ft_memalloc(sizeof(t_buffer));
 	if (new == NULL)
 		return (NULL);
-	return (buffer_init(new, size));
+	return (ft_buffer_init(new, size));
 }
 
-t_buffer	*buffer_dup(const char *str)
+t_buffer	*ft_buffer_dup(const char *str)
 {
-	return (buffer_ndup(str, ft_strlen(str)));
+	return (ft_buffer_ndup(str, ft_strlen(str)));
 }
 
-t_buffer	*buffer_ndup(const char *str, size_t len)
+t_buffer	*ft_buffer_ndup(const char *str, size_t len)
 {
 	t_buffer	*new;
 	
-	new = buffer_new(len + 1);
+	new = ft_buffer_new(len + 1);
 	if (new == NULL)
 		return (NULL);
 	ft_memcpy(new->str, str, len);
