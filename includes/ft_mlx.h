@@ -6,12 +6,12 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 15:07:43 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/10 15:26:09 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/20 15:17:22 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_H
-# define MLX_H
+#ifndef FT_MLX_H
+# define FT_MLX_H
 
 # include "libft.h"
 

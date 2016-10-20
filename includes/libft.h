@@ -20,7 +20,6 @@
 # include "typedef.h"
 # include "list.h"
 # include "mem.h"
-# include "mlx.h"
 # include "output.h"
 # include "file_manage.h"
 # include "char_control.h"
@@ -31,5 +30,6 @@
 # include "numeric_manage.h"
 # include "array.h"
 # include "buffer.h"
+# include "ft_mlx.h"
 
 #endif
