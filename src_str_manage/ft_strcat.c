@@ -6,25 +6,14 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 13:32:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2015/12/19 09:14:56 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/21 10:43:26 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcat(char *dest, const char *src)
 {
-	char		*t_dest;
-	const char	*t_src;
-
-	t_dest = dest;
-	t_src = src;
-	while (*t_dest)
-		t_dest++;
-	while (*t_src)
-	{
-		*t_dest = *t_src;
-		t_dest++;
-		t_src++;
-	}
-	*t_dest = '\0';
+	ft_strcpy(dest + ft_strlen(dest), src);
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 22:34:38 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/25 12:13:09 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/21 10:39:34 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,16 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new;
-	int		i;
-	int		j;
+	char	*str;
+	int		size;
 
-	i = -1;
-	if (s1 && s2)
-	{
-		new = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-		if (!new)
-			return (NULL);
-		while (s1[++i])
-			new[i] = s1[i];
-		j = -1;
-		while (s2[++j])
-			new[i + j] = s2[j];
-		return (new);
-	}
-	return (NULL);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	if ((str = ft_strnew(size)) == NULL)
+		return (NULL);
+	ft_strcat(str, s1);
+	ft_strcat(str, s2);
+	str[size] = '\0';
+	return (str);
 }
