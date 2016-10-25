@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 15:23:14 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/06/10 14:10:32 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/10/25 23:17:21 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*p;
 
-	if (!size || (p = malloc(size)) == NULL)
+	if (!size || (p = malloc(size + 1)) == NULL)
 		return (NULL);
-	ft_bzero(p, size);
+	ft_bzero(p, size + 1);
 	return (p);
 }
