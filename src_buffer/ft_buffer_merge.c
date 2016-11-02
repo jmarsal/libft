@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/16 00:57:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:52:26 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/11/02 11:17:57 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/11/02 11:18:00 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_buffer	*ft_buffer_merge(t_buffer *b1, t_buffer *b2)
 {
 	t_buffer	*new;
 	size_t		size;
-	
+
 	size = b1->sizemax + b2->sizemax;
 	new = ft_buffer_new(size);
 	if (new == NULL)

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:09:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:43:18 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/02 11:21:20 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_buffer	*ft_buffer_dup(const char *str)
 t_buffer	*ft_buffer_ndup(const char *str, size_t len)
 {
 	t_buffer	*new;
-	
+
 	new = ft_buffer_new(len + 1);
 	if (new == NULL)
 		return (NULL);

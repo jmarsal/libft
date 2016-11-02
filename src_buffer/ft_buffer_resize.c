@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 01:00:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:42:39 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/02 11:20:48 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_buffer	*ft_buffer_resize(t_buffer *b, size_t len)
 {
 	void	*new;
 	size_t	newsize;
-	
+
 	newsize = b->sizemax * BUFFER_GROWTH_FACTOR;
 	while (b->len + len >= newsize)
 		newsize *= BUFFER_GROWTH_FACTOR;

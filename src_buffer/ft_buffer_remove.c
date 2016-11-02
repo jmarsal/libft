@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:58:15 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:44:22 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/02 11:20:19 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 size_t	ft_buffer_remove(t_buffer *b, size_t pos, size_t size)
 {
 	size_t	removed;
-	
+
 	if (pos >= b->len)
 		return (0);
 	if (pos + size >= b->len)

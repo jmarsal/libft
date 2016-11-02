@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 01:01:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:47:55 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/02 11:21:42 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ size_t	ft_buffer_rewindchr(t_buffer *b, int c)
 	b->len = pos;
 	return (ret);
 }
-

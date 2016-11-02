@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMERIC_MANAGE
-# define NUMERIC_MANAGE
+#ifndef NUMERIC_MANAGE_H
+# define NUMERIC_MANAGE_H
 
 void	ft_swap(int *a, int *b);
 
