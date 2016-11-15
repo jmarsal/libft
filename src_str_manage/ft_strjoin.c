@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 22:34:38 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/21 10:39:34 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/15 17:07:53 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		size;
 
 	size = ft_strlen(s1) + ft_strlen(s2);
-	if (s1 == NULL || s2 == NULL)
+	if ((s1 == NULL) || (s2 == NULL))
 		return (NULL);
 	if ((str = ft_strnew(size)) == NULL)
 		return (NULL);
