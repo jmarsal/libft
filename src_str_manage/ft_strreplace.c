@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 22:53:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/02 12:22:49 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/21 17:07:27 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,18 @@ static char	*ret_strcpy(char *dest, const char *src, size_t i, size_t len)
 	return (dest);
 }
 
-static char	*ret_newstr(char **str_before, char **str_after, size_t *i,
-						const char *str, int test)
+static char	*ret_newstr(char **str_before, size_t *i, const char *str, int test)
 {
-	*str_after = ft_strdup(str + *i);
-	*str_before = ft_strjoin(*str_before, *str_after);
-	ft_free_null(*str_after);
+	char *str_after;
+
+	str_after = ft_strdup(str + *i);
+	*str_before = ft_strjoin(*str_before, str_after);
+	ft_free_null(str_after);
 	if (test)
 	{
-		*str_after = ft_strchr(*str_before, '}');
+		str_after = ft_strchr(*str_before, '}');
 		*str_before = ft_strchr_bef(*str_before, '}');
-		*str_before = ft_strjoin(*str_before, *str_after + 1);
+		*str_before = ft_strjoin(*str_before, str_after + 1);
 	}
 	return (*str_before);
 }
@@ -74,7 +75,6 @@ char		*ft_strreplace(const char *str, const char *find,
 						const char *replace)
 {
 	char	*str_before;
-	char	*str_after;
 	size_t	i;
 	size_t	j;
 	int		test;
@@ -91,7 +91,7 @@ char		*ft_strreplace(const char *str, const char *find,
 					ft_strjoin(ret_strcpy(str_before, str, j, i - 1), replace) :
 					ft_strjoin(ret_strcpy(str_before, str, j, i), replace);
 			i += ft_strlen(find);
-			str_before = ret_newstr(&str_before, &str_after, &i, str, test);
+			str_before = ret_newstr(&str_before, &i, str, test);
 		}
 	}
 	return (str_before ? str_before : (char *)str);
