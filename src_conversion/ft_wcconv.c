@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 12:50:35 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/13 14:25:32 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/22 13:57:52 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ char	*ft_wcconv(wchar_t wchar)
 	char	*str_tmp;
 
 	str_tmp = ft_strnew(4);
-	ft_bzero(str_tmp, 4);
 	if (wchar <= 0x7f)
 		str_tmp[0] = wchar;
 	else if (wchar <= 0x7ff)
