@@ -6,7 +6,7 @@
 #    By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/02 15:19:59 by jmarsal           #+#    #+#              #
-#    Updated: 2016/10/17 17:54:41 by jmarsal          ###   ########.fr        #
+#    Updated: 2016/11/23 14:42:21 by jmarsal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_STR_MANAGE =		ft_strcat.c \
 						ft_strmapi.c \
 						ft_strsub.c \
 						ft_strjoin.c \
+						ft_strjoinf.c \
 						ft_strtrim.c\
 						ft_strsplit.c \
 						ft_strtoupper.c \
@@ -131,7 +132,7 @@ SRC_MEM =				ft_memalloc.c \
 						ft_memmove.c \
 						ft_memchr.c \
 						ft_memcmp.c \
-						ft_free_null.c
+						ft_free.c
 
 SRC_CHAR_CONTROL =		ft_isupper.c \
 						ft_islower.c \

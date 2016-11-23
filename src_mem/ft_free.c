@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_null.c                                     :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/15 23:21:04 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/02 11:23:06 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/08/21 14:53:15 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/11/23 14:30:30 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_null(void *ptr)
+void	ft_free(void *ptr)
 {
-	free(ptr);
-	ptr = NULL;
+	if (ptr)
+	{
+		free((ptr));
+		ptr = NULL;
+	}
 }

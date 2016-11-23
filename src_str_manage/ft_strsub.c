@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 21:59:30 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/25 11:43:10 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:42:01 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (s)
 	{
-		str = (char *)malloc(sizeof(char) * (len + 1));
+		str = ft_strnew(len);
 		if (str)
 		{
 			while (start--)

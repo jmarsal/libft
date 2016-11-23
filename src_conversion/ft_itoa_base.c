@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 17:21:41 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/14 11:28:28 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:17:20 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_itoa_base(long n, int base)
 	if (base < 2 || base > 16)
 		return (NULL);
 	negative = (n < 0) ? 1 : 0;
-	if (!(number = (char*)malloc(sizeof(char) * (32 + 1))))
+	if (!(number = ft_strnew(32 + 1)))
 		return (NULL);
 	i = 0;
 	if (n == 0)

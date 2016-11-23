@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:09:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/02 11:21:20 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:49:13 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_buffer	*ft_buffer_new(size_t size)
 	t_buffer	*new;
 
 	new = ft_memalloc(sizeof(t_buffer));
-	if (new == NULL)
+	if (!new)
 		return (NULL);
 	return (ft_buffer_init(new, size));
 }

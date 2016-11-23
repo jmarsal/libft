@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 15:56:48 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/02 11:23:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:43:21 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@
 void	ft_strdel(char **as)
 {
 	if (as != NULL)
-	{
-		ft_free_null(*as);
-	}
+		ft_free(*as);
 }

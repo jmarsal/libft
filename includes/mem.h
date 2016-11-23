@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 14:57:22 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/15 23:23:18 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 14:19:56 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 void	*ft_realloc(void *ptr, size_t size, size_t oldsize);
-void	ft_free_null(void *ptr);
+void	ft_free(void *ptr);
 
 #endif

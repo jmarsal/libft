@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 12:40:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/15 23:56:12 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 14:22:42 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	del((*alst)->content, (*alst)->content_size);
-	ft_free_null(*alst);
+	ft_free(*alst);
 }

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:09:16 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/14 11:26:04 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:28:23 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_utoa_base(unsigned long int n, int base)
 	charset = "0123456789abcdef";
 	if (base < 2 || base > 16)
 		return (NULL);
-	if (!(number = (char*)malloc(sizeof(char) * (32 + 1))))
+	if (!(number = ft_strnew(32)))
 		return (NULL);
 	i = 0;
 	if (n == 0)

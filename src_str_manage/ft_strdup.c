@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 10:17:33 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/25 11:45:56 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:23:24 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(const char *s1)
 {
 	char	*new_str;
 
-	if ((new_str = ft_strnew(ft_strlen(s1))) == NULL)
+	if (!(new_str = ft_strnew(ft_strlen(s1))))
 		return (NULL);
 	return (ft_strcpy(new_str, s1));
 }

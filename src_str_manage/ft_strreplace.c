@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 22:53:57 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/21 17:07:27 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 14:23:57 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*ret_newstr(char **str_before, size_t *i, const char *str, int test)
 
 	str_after = ft_strdup(str + *i);
 	*str_before = ft_strjoin(*str_before, str_after);
-	ft_free_null(str_after);
+	ft_free(str_after);
 	if (test)
 	{
 		str_after = ft_strchr(*str_before, '}');

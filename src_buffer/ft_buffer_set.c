@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 01:03:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:53:01 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/23 16:51:09 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_buffer	*ft_buffer_set(t_buffer *b, int c, size_t len)
 {
 	if (BUF_NEED_RESIZE(b, len))
-		if (ft_buffer_resize(b, len) == NULL)
+		if (!ft_buffer_resize(b, len))
 			return (NULL);
 	ft_memset(b->str + b->len, c, len);
 	b->len += len;
