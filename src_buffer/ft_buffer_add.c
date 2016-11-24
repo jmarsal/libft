@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/16 00:40:53 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/23 16:53:52 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/08/22 15:28:06 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/11/24 14:08:44 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_buffer	*ft_buffer_add(t_buffer *b, size_t pos, const char *s, size_t len)
 {
-	if (pos > b->len)
-		return (NULL);
 	if (!b)
 		b = ft_buffer_new(BUFFER_INIT_SIZE);
+	if (pos > b->len)
+		return (NULL);
 	if (BUF_NEED_RESIZE(b, len))
 		if (!(b = ft_buffer_resize(b, len)))
 			return (NULL);
