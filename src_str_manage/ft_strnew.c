@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 15:47:42 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/05/25 12:10:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/28 13:38:47 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strnew(size_t size)
 {
 	char *str;
 
-	str = (char *)ft_memalloc(sizeof(char) * size + 1);
+	str = ft_memalloc(size + 1);
 	return (str);
 }
