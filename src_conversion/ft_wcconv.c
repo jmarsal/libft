@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 12:50:35 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/22 13:57:52 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/01 09:41:19 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@
 **			11110110 =
 **			10000010
 **
-**	0xxxxxxx // 0x00
-**	Aucune action
+**	0xxxxxxx // 0x00 à 0x7F (0 à 127 tient sur 1 octet)
+**	Aucune action car tiens dans la table ascii
 **
-**	110xxxxx 10xxxxxx // 0xC0 0x80
-**	Je deplace de 6 sur la droite et j'ajoute 11000000
-**	Je filtre par 111111 et j'ajoute 10000000
+**	110xxxxx 10xxxxxx // 0xC0 0x80 (tient sur 2 octets)
+**	Je deplace de 6 sur la droite et j'ajoute 11000000 (0xC0)
+**	Je filtre par 111111 et j'ajoute 10000000 (0x80)
 **
-**	1110xxxx 10xxxxxx 10xxxxxx // 0xE0 0x80 0x80
-**	Je deplace de 12 sur la droite et j'ajoute 11100000
-**	Je deplace de 6, je filtre par 111111 et j'ajoute 10000000
-**	Je filtre par 111111 et j'ajoute 10000000
+**	1110xxxx 10xxxxxx 10xxxxxx // 0xE0 0x80 0x80 (tient sur 3 octets)
+**	Je deplace de 12 sur la droite et j'ajoute 11100000 (0xE0)
+**	Je deplace de 6, je filtre par 111111 et j'ajoute 10000000 (0x80)
+**	Je filtre par 111111 et j'ajoute 10000000 (0x80)
 **
-**	11110xxx 10xxxxxx 10xxxxxx 10xxxxxx // 0xF0 0x80 0x80 0x80
-**	Je deplace de 18 sur la droite et j'ajoute 11110000
+**	11110xxx 10xxxxxx 10xxxxxx 10xxxxxx // 0xF0 0x80 0x80 0x80 (4 octets)
+**	Je deplace de 18 sur la droite et j'ajoute 11110000 (0xF0)
 **	Je deplace de 12 sur la droite, je filtre par 111111 et j'ajoute 10000000
 **	Je deplace de 6 sur la droite, je filtre par 111111 et j'ajoute 10000000
 **	Je filtre par 111111 et j'ajoute 10000000
