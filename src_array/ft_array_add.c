@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 23:51:52 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/23 14:21:24 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/02 14:31:57 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	ft_array_resize(t_array *array)
 
 void		ft_array_add(t_array *array, void *ptr)
 {
+	if (!array)
+		array = ft_array_create(INIT_TAB_SIZE);
 	if (array->index + 1 == array->size)
 		ft_array_resize(array);
 	array->cells[array->index++] = ptr;
