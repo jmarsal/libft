@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 12:48:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/23 14:22:01 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/28 16:40:20 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_wcsconv(wchar_t *ws)
 		return (NULL);
 	while (ws[i])
 	{
-		str_tmp = ft_strdup(ft_wcconv(ws[i++]));
+		str_tmp = ft_wcconv(ws[i++]);
 		ret_str = ft_strcat(ret_str, str_tmp);
 		ft_free(str_tmp);
 	}

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/21 14:53:15 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/23 14:30:30 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/25 10:52:50 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(void *ptr)
 {
-	if (ptr)
+	if (ptr != NULL)
 	{
 		free((ptr));
 		ptr = NULL;

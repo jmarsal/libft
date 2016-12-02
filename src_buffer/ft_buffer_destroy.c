@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/16 00:55:10 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/10/17 17:47:52 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/11/30 16:39:07 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_buffer_destroy(t_buffer **b)
 {
-	free((*b)->str);
-	free((*b));
-	*b = NULL;
+	if (*b)
+	{
+		free((*b)->str);
+		free((*b));
+		*b = NULL;
+	}
 }
